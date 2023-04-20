@@ -135,6 +135,9 @@
     <ClCompile Include="Float4.cpp">
       <Filter>ソース ファイル\Math</Filter>
     </ClCompile>
+    <ClCompile Include="Assimp.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WinAPI.h">
@@ -221,6 +224,12 @@
     <ClInclude Include="Float4.h">
       <Filter>ヘッダー ファイル\Math</Filter>
     </ClInclude>
+    <ClInclude Include="Assimp.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedStruct.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\Object3D.hlsli">
@@ -229,6 +238,7 @@
     <None Include="Resources\Shaders\Sprite.hlsli">
       <Filter>シェーダーファイル</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Resources\Shaders\Object3DPS.hlsl">

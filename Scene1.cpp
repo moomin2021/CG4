@@ -1,4 +1,6 @@
 #include "Scene1.h"
+#include "Assimp.h"
+#include "SharedStruct.h"
 
 Scene1::Scene1() :
 	key_(nullptr),
@@ -23,6 +25,20 @@ Scene1::~Scene1()
 
 void Scene1::Initialize()
 {
+	const wchar_t* modelFile = L"Resources/Alicia/FBX/Alicia_solid_Unity.FBX";
+	std::vector<Mesh> meshes;
+
+	ImportSettings importSetting = // これ自体は自作の読み込み設定構造体
+	{
+		modelFile,
+		meshes,
+		false,
+		true // アリシアのモデルは、テクスチャのUVのVだけ反転してるっぽい？ので読み込み時にUV座標を逆転させる
+	};
+
+	AssimpLoader loader;
+	loader.Load(importSetting);
+
 	// キーボード入力インスタンス取得
 	key_ = Key::GetInstance();
 
@@ -32,7 +48,7 @@ void Scene1::Initialize()
 
 	// モデル
 	//sphereM_ = Model::CreateModel("sphere");
-	cubeM_ = Model::CreateModel("cube");
+	cubeM_ = Model::CreateModel("player");
 	floorM_ = Model::CreateModel("floor");
 
 	// オブジェクト
