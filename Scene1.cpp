@@ -48,7 +48,7 @@ void Scene1::Initialize()
 
 	// モデル
 	//sphereM_ = Model::CreateModel("sphere");
-	cubeM_ = Model::CreateModel("player");
+	cubeM_ = Model::CreateModel("cube");
 	floorM_ = Model::CreateModel("floor");
 
 	// オブジェクト
